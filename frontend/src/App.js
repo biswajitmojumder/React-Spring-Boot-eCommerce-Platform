@@ -7,7 +7,7 @@ function App() {
     <>
 
       <Header/>
-      <main>
+      <main classNmae='py-3'>
       <Container>
          React Spring Boot 
       </Container>
