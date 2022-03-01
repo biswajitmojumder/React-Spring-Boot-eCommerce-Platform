@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "products")
 public class Products {
 	@Id
-	private String _id;
+	private String id;
 	private String name;
 	private String image;
 	private String brand;
@@ -100,12 +100,12 @@ public class Products {
 	}
 
 	public String getId() {
-		return _id;
+		return id;
 	}
 
 	@Override
 	public String toString() {
-		return "Products [id=" + _id + ", name=" + name + ", image=" + image + ", brand=" + brand + ", category="
+		return "Products [id=" + id + ", name=" + name + ", image=" + image + ", brand=" + brand + ", category="
 				+ category + ", price=" + price + ", countInStock=" + countInStock + ", rating=" + rating
 				+ ", numReviews=" + numReviews + "]";
 	}

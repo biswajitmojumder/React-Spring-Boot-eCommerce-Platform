@@ -4,25 +4,26 @@ import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
 import Rating from '../components/Rating'
 import axios from 'axios'
 // import products from '../products'
-import ProductService from '../services/ProductService'
 
-const ProductScreen = ({match}) => {
+const ProductScreen = () => {
 
-    const {id} = useParams
-    console.log('id '. id)
+    // id is not set right
+  const {id} = useParams();
+
+    console.log('id ', id)
     const [product, setProduct] = useState({})
 
     const PRODUCTS_API_BASE_URL = `http://localhost:8080/api/products/${id}`
+    // const PRODUCTS_API_BASE_URL = `http://localhost:8080/api/products/621dcf5777fa1c4ffecd30c4`
 
 
-     useEffect((id) => {
-      const axiosProducts = async () => {
+     useEffect(() => {
+      const axiosProduct = async () => {
         const response =  await axios.get(PRODUCTS_API_BASE_URL);
-   
         setProduct(response.data)
 
       }       
-    axiosProducts();
+    axiosProduct();
     }, [])
   return (
     <div>

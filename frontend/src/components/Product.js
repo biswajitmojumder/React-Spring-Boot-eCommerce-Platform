@@ -4,7 +4,7 @@ import {Card} from 'react-bootstrap'
 import Rating from './Rating'
 const Product = ({product}) => {
   
-    console.log('product ', product);
+    // console.log('product ', product);
   return (
 
     <Card className='my-3 p-3 rounded'>
