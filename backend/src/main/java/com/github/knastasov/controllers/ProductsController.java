@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.knastasov.model.Products;
 import com.github.knastasov.repository.ProductsRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
 public class ProductsController {
