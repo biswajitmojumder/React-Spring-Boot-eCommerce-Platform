@@ -6,13 +6,13 @@ import axios from 'axios'
 // import products from '../products'
 import ProductService from '../services/ProductService'
 
-const ProductScreen = () => {
+const ProductScreen = ({match}) => {
 
     const {id} = useParams
     console.log('id '. id)
     const [product, setProduct] = useState({})
 
-    const PRODUCTS_API_BASE_URL = `http://localhost:8080/api/products/621dcfa277fa1c4ffecd30c5`
+    const PRODUCTS_API_BASE_URL = `http://localhost:8080/api/products/${id}`
 
 
      useEffect((id) => {
@@ -23,7 +23,7 @@ const ProductScreen = () => {
 
       }       
     axiosProducts();
-    }, [id])
+    }, [])
   return (
     <div>
         <Link className='btn btn-dark my-3' to='/'> Go back
