@@ -7,19 +7,17 @@ import products from '../products'
 import ProductService from '../services/ProductService'
 
 const ProductScreen = ({match}) => {
-    const PRODUCTS_API_BASE_URL = "http://localhost:8080/api/products"
 
       const {id} = useParams();
-    //   const [products, setProducts] = useState()
-   useEffect(() => {
-    const res = axios.get(PRODUCTS_API_BASE_URL);
-        console.log('res ', res)
-    //    ProductService.getProducts().then((res) => {
-    //        console.log('res', res)
-    //        setProducts({products: res.data})
-    //     //    setState
-    //    }).catch((err) => {   
-    //    });
+      const [products2, setProducts2] = useState()
+
+
+     useEffect(() => {
+       ProductService.getProducts().then((res) => {
+           console.log('res', res)
+           setProducts2({products2: res.data})
+       }).catch((err) => {   
+       });
     }, [])
 
     const product = products.find(p => p._id ===id)
