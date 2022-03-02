@@ -1,34 +1,35 @@
-import React, {useEffect,useState} from 'react'
+import React, {useEffect} from 'react'
 import {Link,useParams} from 'react-router-dom'
 import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
 import Rating from '../components/Rating'
-import axios from 'axios'
-// import products from '../products'
+import {listProductDetails} from '../actions/productActions'
+import { useDispatch, useSelector } from 'react-redux';
+import Message from './../components/Message';
+import Loader from './../components/Loader';
 
 const ProductScreen = () => {
+    const dispatch  = useDispatch()
+    const {id} = useParams();
 
-    // id is not set right
-  const {id} = useParams();
+    const productDetails = useSelector(state => state.productDetails)
 
-    console.log('id ', id)
-    const [product, setProduct] = useState({})
+    const {loading, error, product} = productDetails
 
-    const PRODUCTS_API_BASE_URL = `http://localhost:8080/api/products/${id}`
-    // const PRODUCTS_API_BASE_URL = `http://localhost:8080/api/products/621dcf5777fa1c4ffecd30c4`
 
 
      useEffect(() => {
-      const axiosProduct = async () => {
-        const response =  await axios.get(PRODUCTS_API_BASE_URL);
-        setProduct(response.data)
+         dispatch(listProductDetails(id))
 
-      }       
-    axiosProduct();
-    }, [])
+    }, [dispatch,id])
   return (
     <div>
         <Link className='btn btn-dark my-3' to='/'> Go back
         </Link>
+        {loading 
+        ? <Loader/> 
+        : error ? <Message variant='danger'>
+            {error}
+        </Message> : (
 
         <Row>
             <Col md={6}>
@@ -95,6 +96,11 @@ const ProductScreen = () => {
                 </Card>
             </Col>
         </Row>
+        )
+        
+        
+        }
+
     </div>
   )
 }
