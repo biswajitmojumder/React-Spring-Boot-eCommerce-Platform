@@ -4,8 +4,6 @@ import Product from '../components/Product'
 import {Row, Col} from 'react-bootstrap'
 import { listProducts } from './../actions/productActions';
 
-//import products from '../products'
-// import axios from 'axios'
 const HomeScreen = () => {
 
   const dispatch = useDispatch()
@@ -14,14 +12,7 @@ const HomeScreen = () => {
 
 
      useEffect(() => {
-       dispatch(listProducts())
-      // const axiosProducts = async () => {
-      //   const response = await axios.get(PRODUCTS_API_BASE_URL);
-   
-      //   setProducts(response.data)
-
-      // }       
-      //   axiosProducts();
+        dispatch(listProducts())
     }, [dispatch])
 
   
@@ -34,7 +25,6 @@ const HomeScreen = () => {
             {products.map(product =>  
                 <Col key={product.id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product}/>   
-                     {/* <h6>{product.id}</h6>    */}
           </Col>
             )}
         </Row>

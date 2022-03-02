@@ -6,7 +6,7 @@ import {
 } from '../constants/productConstants'
 
 
-    const PRODUCTS_API_BASE_URL = "http://localhost:8080/api/products"
+const PRODUCTS_API_BASE_URL = "http://localhost:8080/api/products"
 
 
 export const listProducts = () => async(dispatch) => {
