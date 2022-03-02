@@ -6,13 +6,14 @@ import {
 } from '../constants/productConstants'
 
 
+const PRODUCTS_API_BASE_URL = "http://localhost:8080/api/products"
 
 
 export const listProducts = () => async(dispatch) => {
     try {
         dispatch({type: PRODUCT_LIST_REQUEST})
 
-        const {data} = await axios.get('/backend/api/products')
+        const {data} = await axios.get(PRODUCTS_API_BASE_URL)
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
