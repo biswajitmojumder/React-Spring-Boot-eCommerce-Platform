@@ -8,11 +8,8 @@ import {
     PRODUCT_DETAILS_FAIL,
 } from '../constants/productConstants'
 
-
-const PRODUCTS_API_BASE_URL = "http://localhost:8080/api/products"
-
-
 export const listProducts = () => async(dispatch) => {
+    const PRODUCTS_API_BASE_URL = "http://localhost:8080/api/products"
     try {
         dispatch({type: PRODUCT_LIST_REQUEST})
 
