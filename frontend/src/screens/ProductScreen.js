@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Message from './../components/Message';
 import Loader from './../components/Loader';
 
-const ProductScreen = ({history}) => {
-    const{qty, setQty} = useState(0)
+const ProductScreen = () => {
+  const [qty,setQty] =useState(1)
 
     const dispatch  = useDispatch()
     const {id} = useParams();
@@ -26,7 +26,13 @@ const ProductScreen = ({history}) => {
     }, [dispatch,id])
 
     const addToCartHandler = () => {
+        console.log('qty ',qty)
          navigate(`/cart/${id}?qty=${qty}`);
+    }
+
+    const changeQty = (e) => {
+           console.log('changeQty ', qty)
+       setQty(e.target.value)
     }
   return (
     <div>
@@ -98,7 +104,7 @@ const ProductScreen = ({history}) => {
                              <Col>
                                 <Form.Control
                                  as='select' value={qty}
-                                 onChange={(e) =>setQty(e.target.value)}>
+                                 onChange={changeQty}>
                                  {
                                 [...Array(product.countInStock).keys()].map(x => (<option kye={x+1} value={x+1}> {x+1} </option>))
                                 }
