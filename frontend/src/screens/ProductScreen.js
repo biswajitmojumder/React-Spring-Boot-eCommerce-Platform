@@ -31,13 +31,8 @@ const ProductScreen = () => {
     }
 
     const changeQty = (e) => {
-                                     
-
-        console.log('changeQty ', qty)
+           console.log('changeQty ', qty)
        setQty(e.target.value)
-
-
-
     }
   return (
     <div>
