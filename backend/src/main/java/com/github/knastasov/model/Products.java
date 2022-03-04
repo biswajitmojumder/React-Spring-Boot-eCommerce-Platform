@@ -1,6 +1,7 @@
 package com.github.knastasov.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,9 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Products {
 	@Id
 	private String id;
-	
-	//todo reference user
-	
+	private List<Users> users;
 	private String name;
 	private String image;
 	private String brand;
@@ -21,15 +20,14 @@ public class Products {
 	private BigDecimal rating;
 	private BigDecimal numReviews;
 
-
-	
 	public Products() {
 		super();
 	}
 
-	public Products(String name, String image, String brand, String category, BigDecimal price, BigDecimal countInStock,
-			BigDecimal rating, BigDecimal numReviews) {
+	public Products(List<Users> users, String name, String image, String brand, String category, BigDecimal price,
+			BigDecimal countInStock, BigDecimal rating, BigDecimal numReviews) {
 		super();
+		this.users = users;
 		this.name = name;
 		this.image = image;
 		this.brand = brand;
@@ -108,11 +106,19 @@ public class Products {
 		return id;
 	}
 
+	public List<Users> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<Users> users) {
+		this.users = users;
+	}
+
 	@Override
 	public String toString() {
-		return "Products [id=" + id + ", name=" + name + ", image=" + image + ", brand=" + brand + ", category="
-				+ category + ", price=" + price + ", countInStock=" + countInStock + ", rating=" + rating
-				+ ", numReviews=" + numReviews + "]";
+		return "Products [id=" + id + ", users=" + users + ", name=" + name + ", image=" + image + ", brand=" + brand
+				+ ", category=" + category + ", price=" + price + ", countInStock=" + countInStock + ", rating="
+				+ rating + ", numReviews=" + numReviews + "]";
 	}
 
 }
