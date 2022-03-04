@@ -60,7 +60,7 @@ public class ProductsController {
 	@PostMapping("/products")
 	public ResponseEntity<Products> createProducts(@RequestBody Products products) {
 		try {
-			Products _tutorial = productsRepository.save(new Products(products.getName(), products.getImage(),
+			Products _tutorial = productsRepository.save(new Products(null,products.getName(), products.getImage(),
 					products.getBrand(), products.getCategory(), products.getPrice(), products.getCountInStock(),
 					products.getRating(), products.getNumReviews()));
 
