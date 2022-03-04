@@ -9,6 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Products {
 	@Id
 	private String id;
+	
+	//todo reference user
+	
 	private String name;
 	private String image;
 	private String brand;
@@ -18,6 +21,8 @@ public class Products {
 	private BigDecimal rating;
 	private BigDecimal numReviews;
 
+
+	
 	public Products() {
 		super();
 	}
