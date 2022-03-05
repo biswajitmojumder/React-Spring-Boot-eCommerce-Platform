@@ -5,6 +5,7 @@ import ProductScreen from './screens/ProductScreen';
 import {Container} from 'react-bootstrap'
 import CartScreen from './screens/CartScreen';
 import LoginScreen from './screens/LoginScreen'
+import RegisterScreen from './screens/RegisterScreen'
 import {
   Routes,
   Route
@@ -31,6 +32,8 @@ function App() {
             <Route path="" element={<CartScreen />} />
           </Route>
           <Route path="/login" element={<LoginScreen />}/>
+          <Route path="/register" element={<RegisterScreen />}/>
+          
 
 
            </Routes>

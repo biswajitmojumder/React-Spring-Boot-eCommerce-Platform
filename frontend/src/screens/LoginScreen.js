@@ -1,6 +1,6 @@
 import React from 'react'
-import {Form,Button, Col} from 'react-bootstrap'
-import {Link,useParams,useSearchParams } from 'react-router-dom'
+import {Form,Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 const LoginScreen = () => {
   return (
@@ -28,10 +28,17 @@ const LoginScreen = () => {
         <hr/>
 
         <Form.Group className="mb-3" controlId="formBasicRegister">
-            <Form.Label>Not a member? <Link to={`/register/`}>Sign up
+            <Form.Label>Not a member? <Link to={`/register`}>Sign up
                              </Link></Form.Label>
                    
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicRegister">
+            <Form.Label>Forgot password? <Link to={`/passwordReset`}>Reset password
+                             </Link></Form.Label>
+                   
+        </Form.Group>
+
         </Form>
     
     
