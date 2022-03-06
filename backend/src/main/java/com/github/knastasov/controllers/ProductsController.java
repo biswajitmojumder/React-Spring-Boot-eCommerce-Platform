@@ -68,19 +68,7 @@ public class ProductsController {
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
-//		{
-//		    "name" : "Postman",
-//		    "image" :"postimg",
-//		    "brand" :"brand",
-//		    "category" :"category",
-//		    "price" :"123",
-//		    "countInStock" :"4",
-//		    "rating" :"3",
-//		    "numReviews" :"2"
-//		}
-
-	}
+   }
 
 	@PutMapping("/products/{id}")
 	public ResponseEntity<Products> updateProducts(@PathVariable("id") String id, @RequestBody Products products) {
