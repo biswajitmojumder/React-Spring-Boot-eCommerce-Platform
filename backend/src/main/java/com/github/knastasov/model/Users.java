@@ -15,7 +15,8 @@ public class Users {
 
 	private String email;
 
-	private StringBuilder password;
+//	private StringBuilder password;
+	private String password;
 
 	private Boolean isAdmin;
 
@@ -26,7 +27,7 @@ public class Users {
 		super();
 	}
 
-	public Users(String name, String email, StringBuilder password, Boolean isAdmin, ZonedDateTime time) {
+	public Users(String name, String email, String password, Boolean isAdmin, ZonedDateTime time) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -51,11 +52,11 @@ public class Users {
 		this.email = email;
 	}
 
-	public StringBuilder getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(StringBuilder password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
