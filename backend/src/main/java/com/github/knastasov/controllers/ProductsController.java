@@ -135,5 +135,18 @@ public class ProductsController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+//	@GetMapping("/login")
+//	public ResponseEntity<List<Products>> login(String brand) {
+//		try {
+//			List<Products> products = productsRepository.findByBrand(brand);
+//			if (products.isEmpty()) {
+//				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//			}
+//			return new ResponseEntity<>(products, HttpStatus.OK);
+//		} catch (Exception e) {
+//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
+//	}
 
 }
