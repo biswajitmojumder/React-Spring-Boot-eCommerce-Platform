@@ -10,7 +10,7 @@ export const listUsers = () => async(dispatch) => {
             dispatch({type: USER_REQUEST})
     
             const {data} = await axios.get(USERS_API_BASE_URL)
-    
+            console.log(data)
             dispatch({
                 type: USER_SUCCESS,
                 payload: data

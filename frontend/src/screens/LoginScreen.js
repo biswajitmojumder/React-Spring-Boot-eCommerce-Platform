@@ -1,8 +1,24 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {Form,Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-
+import { useDispatch, useSelector } from 'react-redux';
+import {listUsers} from '../actions/userActions'
 const LoginScreen = () => {
+    
+  const dispatch  = useDispatch()
+
+  const userDetails = useSelector(state => state.user)
+
+  const { users} = userDetails
+
+  console.log(users)
+
+
+   useEffect(() => {
+       dispatch(listUsers())
+
+  }, [dispatch])
+
   return (
     <div>
         <Form>
