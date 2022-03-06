@@ -16,7 +16,7 @@ import com.github.knastasov.repository.UsersRepository;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
-public class LoginController {
+public class UsersController {
 	
 	@Autowired
 	UsersRepository userRepository;
