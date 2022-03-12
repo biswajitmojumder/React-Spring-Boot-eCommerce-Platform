@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import {Form,Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import {listUsers} from '../actions/userActions'
 const LoginScreen = () => {
@@ -12,6 +12,7 @@ const LoginScreen = () => {
   const { users} = userDetails
 
   console.log(users)
+  let navigate = useNavigate();
 
 
    useEffect(() => {
@@ -21,7 +22,24 @@ const LoginScreen = () => {
 
   const handleLoginFrom = () => {
       console.log('handleLoginFrom ')
+      navigate(`/`);
+
   }
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault()
+//     // if(!this.state.errcount) {
+//         const data = new FormData(this.form)
+//         fetch(this.form.action, {
+//           method: this.form.method,
+//           body: new URLSearchParams(data)
+//         })
+//         .then(v => {
+//             if(v.redirected) window.location = v.url
+//         })
+//         .catch(e => console.warn(e))
+//     // }
+// }
 
   return (
     <div>
@@ -43,8 +61,9 @@ const LoginScreen = () => {
             <Form.Check type="checkbox" label="Remember me" />
         </Form.Group>
         <Button 
+        type="button" 
         onClick={handleLoginFrom}
-        variant="primary" type="submit">
+        variant="primary" >
             Login
         </Button>
         <hr/>
