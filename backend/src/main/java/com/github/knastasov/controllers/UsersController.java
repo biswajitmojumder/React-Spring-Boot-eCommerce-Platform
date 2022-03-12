@@ -30,7 +30,7 @@ public class UsersController {
 	public ResponseEntity<List<Users>> login(String email) {
 		try {
 //			List<Users> users = userRepository.findByEmail(email);
-			List<Users> users = userRepository.findAll();
+			List<Users> users = userRepository.findByEmail("kiril@gmail.com");
 
 			if (users.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
