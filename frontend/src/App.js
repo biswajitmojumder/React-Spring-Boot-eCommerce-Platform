@@ -31,7 +31,7 @@ function App() {
             <Route path=":qty" element={<CartScreen />} />
             <Route path="" element={<CartScreen />} />
           </Route>
-          <Route path="/login" element={<LoginScreen />}/>
+          <Route path="/api/login" element={<LoginScreen />}/>
           <Route path="/register" element={<RegisterScreen />}/>
           
 
